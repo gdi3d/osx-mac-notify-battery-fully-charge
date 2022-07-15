@@ -4,4 +4,4 @@ This tiny script will check every 5 minutes your battery charge, and  display no
 
 # How to install and docs
 
-[https://gdi3d.githubio.com/osx-mac-notify-battery-fully-charge](https://gdi3d.githubio.com/osx-mac-notify-battery-fully-charge)
+[https://gdi3d.github.io/osx-mac-notify-battery-fully-charge](https://gdi3d.github.io/osx-mac-notify-battery-fully-charge)
