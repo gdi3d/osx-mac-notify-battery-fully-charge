@@ -56,3 +56,11 @@ If you want to remove everything:
   ```
   launchctl unload -w ~/BatteryNotification/com.gdi3d.battery.full.notification.plist && rm -Rf ~/BatteryNotification
   ```
+
+# Repository
+Here's the repo if you want to know more:
+[https://github.com/gdi3d/osx-mac-notify-battery-fully-charge](https://github.com/gdi3d/osx-mac-notify-battery-fully-charge)
+
+# Need help?
+
+Contact me [on my LinkedIn](https://www.linkedin.com/in/adrianogalello/), feel free to send me a message.
