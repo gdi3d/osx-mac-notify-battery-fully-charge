@@ -53,9 +53,9 @@ If you want to remove everything:
 1. Open the application **Terminal**. Search it inside your **Applications** folder or using **Spotlight** search **(cmd+space bar)** and type **terminal.app**
 2. Inside that white window (that’s the terminal app) paste this command and then hit Enter
 
-  ```
-  launchctl unload -w ~/BatteryNotification/com.gdi3d.battery.full.notification.plist && rm -Rf ~/BatteryNotification
-  ```
+```
+launchctl unload -w ~/BatteryNotification/com.gdi3d.battery.full.notification.plist && rm -Rf ~/BatteryNotification
+```
 
 # Repository
 Here's the repo if you want to know more:
