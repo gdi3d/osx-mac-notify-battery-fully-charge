@@ -46,7 +46,7 @@ If you have disabled the script and want to enable it again:
 launchctl load -w ~/BatteryNotification/com.gdi3d.battery.full.notification.plist
 ```
 
-# How to Uninstall it
+# How to Uninstall it
 
 If you want to remove everything:
 
