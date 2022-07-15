@@ -5,7 +5,7 @@ set -e
 $(curl -s https://raw.githubusercontent.com/gdi3d/osx-mac-notify-battery-fully-charge/main/BatteryNotification.sh -O && \
     curl -s https://raw.githubusercontent.com/gdi3d/osx-mac-notify-battery-fully-charge/main/com.gdi3d.battery.full.notification.plist -O)
 
-if [ ! -z "$?" ]; then
+if [ "$?" -ne 0 ]; then
     echo "Installation Failed 😞"
     echo "Unable to download the files from the repository"
     echo
@@ -25,5 +25,3 @@ chmod a+x BatteryNotification.sh
 launchctl load -w com.gdi3d.battery.full.notification.plist
 
 echo "Installation complete! 😀"
-
-trap echo "Installation Failed 😞\r\n\nTry open a ticket at: https://github.com/gdi3d/osx-mac-notify-battery-fully-charge/issues/new and paste the output of this screen into the ticket"
