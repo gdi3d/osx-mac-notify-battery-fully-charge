@@ -3,7 +3,8 @@ set -e
 
 # download the files from the repo
 $(curl -s https://raw.githubusercontent.com/gdi3d/osx-mac-notify-battery-fully-charge/main/BatteryNotification.sh -O && \
-    curl -s https://raw.githubusercontent.com/gdi3d/osx-mac-notify-battery-fully-charge/main/com.gdi3d.battery.full.notification.plist -O)
+    curl -s https://raw.githubusercontent.com/gdi3d/osx-mac-notify-battery-fully-charge/main/com.gdi3d.battery.full.notification.plist -O && \
+    curl -s https://raw.githubusercontent.com/gdi3d/osx-mac-notify-battery-fully-charge/main/README.md -O)
 
 if [ "$?" -ne 0 ]; then
     echo "Installation Failed 😞"
