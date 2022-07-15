@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+# Mac Battery Fully Charged Notification
 
-You can use the [editor on GitHub](https://github.com/gdi3d/osx-mac-notify-battery-fully-charge/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This tiny script will check every 5 minutes your battery charge, and  display notification when it reaches 100%.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Why the hell did you build this?
 
-### Markdown
+Because electricity is not cheap and sometimes I forget the laptop is charging. This will remind me about it.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# How does it work
 
-```markdown
-Syntax highlighted code block
+The script has two parts:
 
-# Header 1
-## Header 2
-### Header 3
+1. The script itself `BatteryNotification.sh`
+2. A `.plist` file to be added to setup a [launch agent](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/Introduction.html#//apple_ref/doc/uid/10000172i-SW1-SW1) to allow the script to run automatically every 5 minutes.
 
-- Bulleted
-- List
+The script will show you the notification only once when the charge is at 100% and then it will get reseted until the next charge.
 
-1. Numbered
-2. List
+# How to install
 
-**Bold** and _Italic_ and `Code` text
+1. Open the application **Terminal**. Search it inside your **Applications** folder or using **Spotlight** search **(cmd+space bar)** and type **terminal.app**
+2. Inside that white window (that’s the terminal app) paste this command and then hit Enter
 
-[Link](url) and ![Image](src)
+```
+mkdir -p ~/BatteryNotification && cd ~/BatteryNotification && bash <( curl -s https://raw.githubusercontent.com/gdi3d/osx-mac-notify-battery-fully-charge/main/install.sh )
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+# How to disable the script
 
-### Jekyll Themes
+If you need to temporary disable the script: 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gdi3d/osx-mac-notify-battery-fully-charge/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+1. Open the application **Terminal**. Search it inside your **Applications** folder or using **Spotlight** search **(cmd+space bar)** and type **terminal.app**
+2. Inside that white window (that’s the terminal app) paste this command and then hit Enter
 
-### Support or Contact
+```
+launchctl unload -w ~/BatteryNotification/com.gdi3d.battery.full.notification.plist
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# How to re-enable the script
+
+If you have disabled the script and want to enable it again:
+
+1. Open the application **Terminal**. Search it inside your **Applications** folder or using **Spotlight** search **(cmd+space bar)** and type **terminal.app**
+2. Inside that white window (that’s the terminal app) paste this command and then hit Enter
+
+```
+launchctl load -w ~/BatteryNotification/com.gdi3d.battery.full.notification.plist
+```
+
+# How to Uninstall it
+
+If you want to remove everything:
+
+1. Open the application **Terminal**. Search it inside your **Applications** folder or using **Spotlight** search **(cmd+space bar)** and type **terminal.app**
+2. Inside that white window (that’s the terminal app) paste this command and then hit Enter
+
+  ```
+  launchctl unload -w ~/BatteryNotification/com.gdi3d.battery.full.notification.plist && rm -Rf ~/BatteryNotification
+  ```
