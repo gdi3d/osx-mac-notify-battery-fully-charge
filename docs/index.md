@@ -73,7 +73,7 @@ If you want to remove everything:
 
 When you update your OS the service will de-register itself. This means that you will have to register the service again.
 
-To register it again follow the steps indicates above on the [How to re-enable the script Section](#How-to-re-enable-the-script)
+To register it again follow the steps indicates above on the [How to re-enable the script Section](#how-to-re-enable-the-script)
 
 
 # Repository
